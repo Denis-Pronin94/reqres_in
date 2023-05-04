@@ -57,7 +57,14 @@ class ListResourceSchema(BaseModel):
     per_page: int
     total: int
     total_pages: int
-    data: List[ListDataResource] = None
+    data: Optional[List[ListDataResource]]
+    support: Support
+
+
+class SingleResourceSchema(BaseModel):
+    """Schema single resource."""
+
+    data: ListDataResource
     support: Support
 
 
@@ -78,8 +85,26 @@ class UpdateSchema(BaseModel):
     updatedAt: datetime
 
 
-class RegisterSchema(BaseModel):
+class RegisterSuccessfulSchema(BaseModel):
     """Schema register."""
 
     id: int
     token: str
+
+
+class RegisterUnsuccessfulSchema(BaseModel):
+    """Schema unregister."""
+
+    error: str
+
+
+class LoginSuccessfulSchema(BaseModel):
+    """Schema register."""
+
+    token: str
+
+
+class LoginUnsuccessfulSchema(BaseModel):
+    """Schema register."""
+
+    error: str

@@ -1,3 +1,30 @@
+import random
+
+# Для теста test_wrong_user_id
+wrong_user_id = [
+    0,
+    'hulk9999',
+    ',',
+    '.6',
+    ',7',
+    '2,',
+    '@#$^&',
+    random.randint(13, 999),
+]
+
+# Для теста test_wrong_user_id и test_wrong_user_id
+ids_wrong_user_id = [
+    '0',
+    'Буквы и цифры',
+    'Запятая',
+    'Точка с цифрой',
+    'Запятая с цифрой',
+    'Цифра с запятой',
+    'Спец. символы',
+    'Рандомное число от 13 до 999',
+]
+
+# Для теста test_create_user и test_update
 valid_data_user = [{
     'name': 'morpheus',
     'job': 'leader',
@@ -28,6 +55,7 @@ valid_data_user = [{
 },
 ]
 
+# Для теста test_create_user и test_update
 ids_valid_data_user = [
     'Валидные значения из документации',
     'Валидные значения из нескольких слов',
@@ -38,6 +66,7 @@ ids_valid_data_user = [
     'Валидные значения из спец. символов',
 ]
 
+# Для теста test_create_with_wrong_payload и test_update_with_wrong_payload
 not_valid_data_user = [
     {
         123: 'morpheus',
@@ -68,6 +97,7 @@ not_valid_data_user = [
     },
 ]
 
+# Для теста test_create_with_wrong_payload и test_update_with_wrong_payload
 ids_not_valid_data_user = [
     'Ключи из цифр',
     'Значения bool',
@@ -78,6 +108,7 @@ ids_not_valid_data_user = [
     'В ключах пробелы в конце слова',
 ]
 
+# Для теста test_register_successful и test_login_successful
 valid_data_register = [{
     "email": "eve.holt@reqres.in",
     "password": "pistol",
@@ -96,6 +127,7 @@ valid_data_register = [{
 },
 ]
 
+# Для теста test_register_successful и test_login_successful
 ids_valid_data_register = [
     'Валидные значения из документации',
     'Пароль с цифрами',
@@ -103,6 +135,7 @@ ids_valid_data_register = [
     'Пароль с пробелами',
 ]
 
+# Для теста test_register_with_wrong_payload и test_login_successful_with_wrong_payload
 not_valid_data_register = [{
     "email": "eve!,23423holt@gmail.com",
     "password": "pistol123",
@@ -133,6 +166,7 @@ not_valid_data_register = [{
 },
 ]
 
+# Для теста test_register_with_wrong_payload и test_login_successful_with_wrong_payload
 ids_not_valid_data_register = [
     'Значение Email отличается от документации',
     'Значение Email отличается от документации',
